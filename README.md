@@ -1,2 +1,3 @@
 # Avaiable on
-https://taha-ahmed-mallick.github.io/flash-card/
+
+<a hreft="https://taha-ahmed-mallick.github.io/flash-card/">Go to website</a>
