@@ -1,2 +1,2 @@
 # Avaiable on
-https://
+https://taha-ahmed-mallick.github.io/flash-card/
