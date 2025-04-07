@@ -68,6 +68,17 @@ section#create-popup {
 	justify-content: center;
 	align-items: center;
 }
+
+section#review-list {
+	z-index: 0;
+	background-color: #dfdfdf;
+	display: grid;
+	grid-template-columns: 1fr 50px;
+	grid-template-rows: 50px 8em 1fr 1fr 1fr;
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
 /* for home section */
 section#home {
 	background: #dfdfdf;
@@ -92,7 +103,8 @@ h1 {
 	font-size: 3em;
 }
 
-span.btn {
+span.btn,
+label.btn {
 	padding: 5px;
 	font-weight: 600;
 	display: flex;
@@ -104,13 +116,13 @@ span.btn {
 }
 
 span.create-list {
-	color: #ff9800;
+	color: #a36200;
 	background: #ffc10782;
 	grid-area: 2 / 1 / 3 / 2;
 }
 
-span.import-list {
-	color: #4caf50;
+label.import-list {
+	color: #327134;
 	background: #4caf5082;
 	grid-area: 2 / 2 / 3 / 3;
 }
@@ -128,7 +140,27 @@ section#home > div.lists {
 	grid-area: 4 / 1 / 5 / 3;
 	border-radius: 10px;
 	box-shadow: inset 0 0 18px 0 black;
-	padding: 13px;
+	padding: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+div.lists > div.list {
+	padding: 15px;
+	background: #ffffff;
+	box-shadow: inset 0 0 13px 0 #adadad, inset 7px -4px 13px 0 #878686;
+	height: min-content;
+	cursor: pointer;
+	border-radius: 7px;
+	margin: 7px 27px;
+}
+
+div.list:active {
+	transform: scale(0.85);
+}
+div.list:hover {
+	transform: scale(1.25);
 }
 /* For popup */
 div.popup {
@@ -198,6 +230,54 @@ table {
 	width: 100%;
 }
 
+/* Review List */
+
+section#review-list > h1 {
+	font-family: "Sour Gummy", sans-serif;
+	font-weight: 900;
+	font-size: 8em;
+	grid-area: 1 / 1 / 3 / 2;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+section#review-list > span {
+	transition: 0.25s linear;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #ff3a2b;
+	font-size: 33px;
+	cursor: pointer;
+	grid-area: 1 / 2 / 2 / 3;
+	border-radius: 0px 0px 0px 15px;
+}
+
+section#review-list > span:hover {
+	background-color: #ff3a2b;
+	color: #ffffff;
+}
+
+section#review-list > div {
+	padding: 15px;
+}
+
+section#review-list > div > span.desc {
+	font-family: "Boldonse", sans-serif;
+}
+
+section#review-list > div.meaning {
+	grid-area: 3 / 1 / 4 / 3;
+}
+
+section#review-list > div.synonym {
+	grid-area: 4 / 1 / 5 / 3;
+}
+
+section#review-list > div.sentence {
+	grid-area: 5 / 1 / 6 / 3;
+}
+
 @media (max-width: 800px) {
 	h1 {
 		font-size: 6vw;
@@ -205,9 +285,26 @@ table {
 	section#home {
 		grid-template-rows: 12vw 40px 7px 1fr;
 	}
+	section#review-list > h1 {
+		font-size: 12vw;
+	}
+	section#review-list {
+		grid-template-columns: 1fr 50px;
+		grid-template-rows: 50px 12vw 1fr 1fr 1fr;
+	}
 	div.popup {
 		width: 100%;
 		height: 100%;
 		border-radius: 0px;
 	}
+}
+
+@media (max-width: 500px) {
+	section#home > div.lists {
+		justify-content: center;
+	}
+}
+
+input[type="file"] {
+	display: none;
 }
