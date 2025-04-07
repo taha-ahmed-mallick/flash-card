@@ -11,26 +11,12 @@
 		<title>Flash Cards</title>
 	</head>
 	<body>
-		<input type="file" id="import" />
-		<section id="home">
-			<header>
-				<h1>vocabulary enhancer</h1>
-			</header>
-			<span class="btn create-list">Create List <span class="material-symbols-outlined"> add </span></span>
-			<label class="btn import-list" for="import"
-				>Import List<span class="material-symbols-outlined">upload</span></label
-			>
-			<div class="lists">
-				<div class="list">
-					<span class="name-list">Anees Husaain Pg#1</span>
-				</div>
-			</div>
-		</section>
+		<input type="file" id="import" accept=".json" />
 		<section id="create-popup">
 			<div class="popup">
 				<h2>create list</h2>
 				<span class="material-symbols-outlined check"> check </span>
-				<span class="material-symbols-outlined close"> close </span>
+				<span class="material-symbols-outlined close" id="create"> close </span>
 				<div class="name">
 					<label style="font-weight: 700" for="name">List Name: </label>
 					<input type="text" id="name" />
@@ -43,7 +29,7 @@
 								<th>Meaning</th>
 								<th>Synonyms</th>
 								<th>Sentence</th>
-								<th><span class="material-symbols-outlined"> delete </span></th>
+								<th class="delete-box"><span class="material-symbols-outlined"> delete </span></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -52,7 +38,7 @@
 								<td><input type="text" class="meaning" /></td>
 								<td><input type="text" class="synonyms" /></td>
 								<td><input type="text" class="sentence" /></td>
-								<td><span class="material-symbols-outlined"> delete </span></td>
+								<td class="delete-box"><span class="material-symbols-outlined"> delete </span></td>
 							</tr>
 						</tbody>
 					</table>
@@ -61,10 +47,29 @@
 		</section>
 		<section id="review-list">
 			<h1 class="word">Conjecture</h1>
-			<span class="material-symbols-outlined close"> close </span>
+			<span class="material-symbols-outlined close" id="review"> close </span>
 			<div class="meaning"><span class="desc">Meaning: </span> <span class="text"></span></div>
 			<div class="synonym"><span class="desc">Synonyms: </span> <span class="text"></span></div>
 			<div class="sentence"><span class="desc">Sentence: </span> <span class="text"></span></div>
+		</section>
+		<section id="home" class="show">
+			<header>
+				<h1>vocabulary enhancer</h1>
+			</header>
+			<span class="btn create-list">Create List <span class="material-symbols-outlined"> add </span></span>
+			<label class="btn import-list" for="import"
+				>Import List<span class="material-symbols-outlined">upload</span></label
+			>
+			<div class="lists">
+				<div class="list">
+					<span class="name-list">Anees Husaain Pg#1</span>
+				</div>
+				<div class="context-menu">
+					<span>Edit <span class="material-symbols-outlined"> edit </span></span>
+					<span>Export <span class="material-symbols-outlined"> download </span></span>
+					<span>Delete <span class="material-symbols-outlined"> delete </span></span>
+				</div>
+			</div>
 		</section>
 		<script src="./script.js"></script>
 	</body>
